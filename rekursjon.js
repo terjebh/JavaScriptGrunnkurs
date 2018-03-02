@@ -16,6 +16,7 @@ tellNed(10);
 // Fibonacci
 
 console.log("Fibonacci-tall fra 1 til 30\n");
+
 let fibo = tall => {
 	if (tall<=2)  return 1;
 	return fibo(tall-1)+fibo(tall-2);

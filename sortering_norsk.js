@@ -1,6 +1,5 @@
 let folk = ["Åge","Mikkel","Kari","Jens","Øivind","Ola"];
 
-
 console.log("Usortert\n");
 
 console.log(folk);
