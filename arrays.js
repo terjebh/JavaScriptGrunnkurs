@@ -2,16 +2,23 @@
 // Eksempler på bruk av Arrays.
 
 // Lag en enkel liste over kursdager;
-var minListe = ["Første kursdag","Andre kursdag","Tredje kursdag"];
+let minListe = ["Første kursdag","Andre kursdag","Tredje kursdag"];
+
+console.log("Det er opprinnelig "+minListe.length+" dager i listen:\n");
+
+// Bla gjennom listen og skriv elementene til konsoll med forEach
+minListe.forEach(dag => console.log(dag));
+
+console.log();  // lag et linjeskift
 
 minListe.unshift("Dagen før kursstart"); // Legg til et element på begynnelsen av listen
 minListe.push("Første dag etter kurset"); // Legg til et element på slutten av listen
 
 console.log("Det er nå "+minListe.length+" dager i listen:\n");
 
-// Bla gjennom ilsten og skriv elementene til konsoll med forEach
-minListe.forEach(function(element) {
-  console.log(element);
+// Bla gjennom listen og skriv elementene til konsoll med forEach
+minListe.forEach(function(dag) {
+  console.log(dag);
 });
 
 console.log();  // lag et linjeskift
@@ -27,7 +34,7 @@ minListe.pop();   // Fjern siste på listen
 console.log("Det er nå "+minListe.length+" dager i listen:\n");
 
 // Bla gjennom ilsten og skriv elementene til konsoll med en for-løkke
-for (var index = 0; index < minListe.length; index++) {
+for (let index = 0; index < minListe.length; index++) {
   console.log(minListe[index]);
 }
 
@@ -46,4 +53,3 @@ minListe.splice(1,0,"Andre kursdag") // Legg til Andre kursdag igjen;
 
 console.log("Andre kursdag er lagt til igjen: "+minListe.join(" - "));
 
-minListe.
