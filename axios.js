@@ -15,5 +15,5 @@ axios
     );
   })
   .catch(error => {
-    console.log(error);
+    console.error("Noe gikk galt: ",error);
   });
