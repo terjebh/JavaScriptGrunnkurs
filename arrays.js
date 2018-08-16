@@ -1,6 +1,8 @@
 
 // Eksempler på bruk av Arrays.
 
+// Eskempel 1: Liste over kursdager
+
 // Lag en enkel liste over kursdager;
 let minListe = ["Første kursdag","Andre kursdag","Tredje kursdag"];
 
@@ -52,4 +54,23 @@ console.log("Andre kursdag er slettet: "+minListe.join(" - "));
 minListe.splice(1,0,"Andre kursdag") // Legg til Andre kursdag igjen;
 
 console.log("Andre kursdag er lagt til igjen: "+minListe.join(" - "));
+
+
+// Eksempel 2: Telle antall ord i en setning
+
+let setning = "Det var en gang en stor krig i en fremmed verdensdel";
+
+let ord = setning.split(" ");
+
+// Tell antall ord
+
+console.log("Antall ord:",ord.length);
+
+
+// Tell antall unike ord i setningen
+let unikeOrd = new Set();
+
+ord.map(x=>unikeOrd.add(x));
+
+console.log("Antall unike ord:",unikeOrd.size);
 
