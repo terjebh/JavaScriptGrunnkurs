@@ -1,4 +1,4 @@
-// Eskempler på sortering med ulike språk
+// Eksempler på sortering med ulike språk
 
 let folk = ["Åge","Aage","Mikkel","Kari","Jens","Øivind","Ola"];
 
