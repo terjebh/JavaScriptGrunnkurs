@@ -1,7 +1,7 @@
 // Eksempler på sortering med ulike språk. 
 
 // For å bruke med node:
-// Installer full-icu: npm i full-icu
+// Installer full-icu: npm i full-icu  (International Components for Unicode)
 // Kjør med kommandoen: 
 // node --icu-data-dir=node_modules/full-icu sortering_norsk.js 
 // eller legg inn som env/bash - variabel:
