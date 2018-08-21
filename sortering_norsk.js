@@ -1,4 +1,5 @@
 // Eksempler på sortering med ulike språk. 
+
 // For å bruke med node:
 // Installer full-icu: npm i full-icu
 // Kjør med kommandoen: 
