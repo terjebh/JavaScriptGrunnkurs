@@ -1,7 +1,7 @@
 
 // Eksempler på bruk av Arrays.
 
-// Eskempel 1: Liste over kursdager
+// Eksempel 1: Liste over kursdager
 
 // Lag en enkel liste over kursdager;
 let minListe = ["Første kursdag","Andre kursdag","Tredje kursdag"];
