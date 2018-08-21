@@ -1,5 +1,30 @@
 // Eksempler på sortering med ulike språk
 
+// For å bruke med node:
+// Installer full-icu: npm i full-icu
+// Kjør med kommandoen: 
+// node --icu-data-dir=node_modules/full-icu sortering_norsk.js 
+// eller legg inn som env/bash - variabel:
+// env NODE_ICU_DATA=/some/directory node  (windows)
+// NODE_ICU_DATA="node_modules/full-icu"; export NODE_ICU_DATA; (linux)
+// MERK: full-icu trengs ikke for sortering via netllesere.
+
+
+require('full-icu');
+
+const hasFullICU = (() => {
+    try {
+      const january = new Date(9e8);
+      const spanish = new Intl.DateTimeFormat('es', { month: 'long' });
+      return spanish.format(january) === 'enero';
+    } catch (err) {
+      return false;
+    }
+  })();
+
+
+
+
 let folk = ["Åge","Aage","Mikkel","Kari","Jens","Øivind","Ola"];
 
 console.log("Usortert\n");
