@@ -3,26 +3,26 @@ var model = {
 	numShips: 2,
 	shipLength: 2,
 	shipsSunk: 0,
-  ships : [],
+	ships: [],
 
-  addShips: function(num) {
+	addShips: function (num) {
 
-    for (var i = 0; i < num ; i++) {
-			let nyttskip = { locations: [], hits: [] };
+		for (var i = 0; i < num; i++) {
+			let nyttskip = {
+				locations: [],
+				hits: []
+			};
 			model.ships.push(nyttskip);
 
 
 			var locations;
 			locations = this.generateShip();
 			model.ships[i].locations = locations;
-
-
-   }
-
+		}
 
 	},
 
-	collision: function(locations) {
+	collision: function (locations) {
 		for (var i = 0; i < this.numShips; i++) {
 			var ship = this.ships[i];
 			for (var j = 0; j < locations.length; j++) {
@@ -34,7 +34,7 @@ var model = {
 		return false;
 	},
 
-	fire: function(guess) {
+	fire: function (guess) {
 		for (var i = 0; i < this.numShips; i++) {
 			var ship = this.ships[i];
 			var index = ship.locations.indexOf(guess);
@@ -61,16 +61,16 @@ var model = {
 		return false;
 	},
 
-	isSunk: function(ship) {
-		for (var i = 0; i < this.shipLength; i++)  {
+	isSunk: function (ship) {
+		for (var i = 0; i < this.shipLength; i++) {
 			if (ship.hits[i] !== "hit") {
 				return false;
 			}
 		}
-	    return true;
+		return true;
 	},
 
-	generateShip: function() {
+	generateShip: function () {
 		var direction = Math.floor(Math.random() * 2);
 		var row, col;
 
@@ -90,12 +90,12 @@ var model = {
 				newShipLocations.push((row + i) + "" + col);
 			}
 		}
-   console.log(newShipLocations);
-   return newShipLocations;
+		console.log(newShipLocations);
+		return newShipLocations;
 
 	},
 
-};
+}; // end model
 
 
 var view = {
@@ -104,32 +104,32 @@ var view = {
 		messageArea.innerHTML = msg;
 	},
 
-	displayHit: function(location) {
+	displayHit: function (location) {
 		var cell = document.getElementById(location);
 		cell.setAttribute("class", "hit");
 	},
 
-	displayMiss: function(location) {
+	displayMiss: function (location) {
 		var cell = document.getElementById(location);
 		cell.setAttribute("class", "miss");
 	}
 
-};
+}; // end view
 
 var controller = {
 	guesses: 0,
 
-	processGuess: function(guess) {
+	processGuess: function (guess) {
 		var location = parseGuess(guess);
 		if (location) {
 			this.guesses++;
 			var hit = model.fire(location);
 			if (hit && model.shipsSunk === model.numShips) {
-					view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+				view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
 			}
 		}
 	}
-}
+} // end controller
 
 
 // helper function to parse a guess from the user
@@ -147,7 +147,7 @@ function parseGuess(guess) {
 		if (isNaN(row) || isNaN(column)) {
 			alert("Oops, that isn't on the board.");
 		} else if (row < 0 || row >= model.boardSize ||
-		           column < 0 || column >= model.boardSize) {
+			column < 0 || column >= model.boardSize) {
 			alert("Oops, that's off the board!");
 		} else {
 			return row + column;
@@ -196,12 +196,12 @@ function init() {
 
 	// handle "return" key press
 	var guessInput = document.getElementById("guessInput");
-  guessInput.onkeypress = handleKeyPress;
-  guessInput.focus();
+	guessInput.onkeypress = handleKeyPress;
+	guessInput.focus();
 	// place the ships on the game board
- console.log("numShips =",model.numShips);
- //console.log("ships");
- console.log("Ships array: ");
- console.log(model.ships);
+	console.log("numShips =", model.numShips);
+	//console.log("ships");
+	console.log("Ships array: ");
+	console.log(model.ships);
 
 }
