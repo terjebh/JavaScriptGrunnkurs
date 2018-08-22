@@ -64,5 +64,5 @@ blabber(); // udefined
 let blabber2 = boromir2.speak.bind(boromir2);
 
 blabber2(); // One does not simply walk into Mordor!
- 
+  
   
