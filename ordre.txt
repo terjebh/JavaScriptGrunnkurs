@@ -1,0 +1,5 @@
+Per Johansen	Vaffeljern	1	299
+Per Johansen	Lysestake	4	400
+Olga Pettersen	Kontorstol	1	1699
+Olga Pettersen	Skrivebord	1	3890
+Oskar Bråthen	Mixer	2	598
