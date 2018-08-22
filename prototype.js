@@ -32,6 +32,17 @@ Object.setPrototypeOf(hund, dyr);
 hund.snakk(); // voff!!
 
 
+let ulv = {
+ hyl: function() {
+  console.log(this.lyd.toUpperCase());
+ } 
+};
+
+Object.setPrototypeOf(ulv,hund);
+ulv.hyl();
+ 
+
+
 // Eksempel 2
 
 // Funksjon med constructor
