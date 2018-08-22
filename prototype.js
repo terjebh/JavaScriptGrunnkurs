@@ -23,6 +23,15 @@ Object.setPrototypeOf(katt, dyr);
 katt.snakk(); // nå er katt.sankk() en funksjon
 
 
+let hund = {
+    lyd: "Voff!!!"
+}
+
+Object.setPrototypeOf(hund, dyr);
+
+hund.snakk(); // voff!!
+
+
 // Eksempel 2
 
 // Funksjon med constructor
