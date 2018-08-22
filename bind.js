@@ -57,5 +57,12 @@ let boromir2 = {
  
 boromir2.speak(); // One does not simply walk into Mordor!, fordi this.sound nå er kalt inne fra objektet boromir2.
 
+let blabber = boromir2.speak;
+
+blabber(); // udefined
+
+let blabber2 = boromir2.speak.bind(boromir2);
+
+blabber2(); // One does not simply walk into Mordor!
 
   
