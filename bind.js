@@ -17,7 +17,7 @@ let talkFunction = dog.talk;
 
 talkFunction(); // undefined, fordi:
 
-// det er det amme som dette :
+// det er det samme som dette :
 // talkFunction = function() {
 //     console.log(this.sound);   // this peker ikke til dog.sound lenger    
 // }

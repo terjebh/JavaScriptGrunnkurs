@@ -16,7 +16,17 @@ console.log("Kursportal".link("http://www.itfakultetet.no/kurs"));
 
 // Skriv en setning baklengs:
 let baklengs = "Dette er en setning".split("").reverse().join("");
-console.log(baklengs);
+console.log(baklengs,'\n');
+
+// Finn en bokstavs indeksverdi i en setning
+let str3 = "Dette er en setning som har bokstaven å i seg";
+
+console.log(str3,'\n');
+
+let indeksverdi = str3.search("å");
+
+
+console.log("\"å\" er bokstav nummer:",indeksverdi);
 
 
 
