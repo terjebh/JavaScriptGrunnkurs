@@ -1,11 +1,14 @@
 //Eksempler på tallfunksjoner
 
-// Presisjonsnivå
-let num = new Number(7.123456);
-console.log(num.toPrecision(4)); // 7.123
-
 // Avrunding
-console.log(num.toFixed()); // 7    
-console.log(Math.round(num,2)); // 7 
+let num = new Number(7.987654);
+console.log(num.toPrecision(3)); // 7.99
+
+console.log(num.toPrecision(2)); // 8.0
+
+console.log(num.toFixed(1)); // 8.0    
+console.log(num.toPrecision(1)); // 8    
+
+console.log(Math.round(num)); // 8 
 
 
