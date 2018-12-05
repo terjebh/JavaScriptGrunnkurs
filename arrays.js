@@ -55,6 +55,10 @@ minListe.splice(1,0,"Andre kursdag") // Legg til Andre kursdag igjen;
 
 console.log("Andre kursdag er lagt til igjen: "+minListe.join(" - "));
 
+// Skjøte på et array til minListe
+console.log(minListe.concat(["Ny dag","Enda en ny dag"]));
+
+
 
 // Eksempel 2: Telle antall ord i en setning
 
@@ -73,4 +77,8 @@ let unikeOrd = new Set();
 ord.map(x=>unikeOrd.add(x));
 
 console.log("Antall unike ord:",unikeOrd.size);
+
+
+
+
 
