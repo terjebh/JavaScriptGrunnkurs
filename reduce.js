@@ -15,6 +15,5 @@ let saldo = konto.filter(x => x.nummer===1001).map(x => x.transaksjon).reduce((x
 
 console.log("Saldo for konto 1001:",saldo);
 
-
 // Output:
 // Saldo for konto 1001: 5800
