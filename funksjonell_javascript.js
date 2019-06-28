@@ -21,8 +21,18 @@ let setning2 = dyr.map((x)=> {
 });
 console.log(setning2);
 
+// Skriv ut med forEach
+console.log("Skrevet ut med forEach():");
+
+dyr.forEach(x=>console.log(x.navn+" er en "+x.art));
+
 let katter = dyr.filter(x=>x.art=="Katt");
-console.log(katter);
+
+console.log("Liste over katter:");
+
+katter.forEach(katt=>console.log("En katt: "+katt.navn));
+
+console.log("Katten Ola:");
 
 let Ola = dyr.filter(x=>x.art=="Katt" && x.navn=="Ola");
 console.log(Ola);
@@ -32,6 +42,4 @@ let tall = [1,2,3,4];
 console.log(tall.reduce((p, c) => { return p+c }, 0));
 console.log(tall.reduce((p, c) => { return p*c }, 1));
 
-
-console.log(Date());
 
