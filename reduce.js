@@ -28,7 +28,7 @@ console.log("Summen er:",summen); // 58
 
 // Eksempel 3: Funksjon for beregning av produkt av ukjent antall parametre 
 // ved hjelp av spread (...) og reduce()
-const produkt = (...args) => [...args].reduce((x,y) =>x*y);
+const produkt = (...tall) => [...tall].reduce((x,y) =>x*y);
 const produktet = produkt(3,4,6,45);
 console.log("Produktet er:",produktet); // 3240
 
