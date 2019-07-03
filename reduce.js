@@ -24,3 +24,9 @@ const summer = (...args) => [...args].reduce((x,y) =>x+y);
 const summen = summer(3,4,6,45);
 console.log("Summen er:",summen); // 58
 
+
+// Eksempel 3: Funksjon for beregning av produkt av ukjent antall parametre
+const produkt = (...args) => [...args].reduce((x,y) =>x*y);
+const produktet = produkt(3,4,6,45);
+console.log("Produktet er:",produktet); // 58
+

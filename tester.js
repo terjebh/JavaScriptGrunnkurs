@@ -16,7 +16,9 @@ console.log("\nSamlet alder for alle dyr: ",dyr.map(x=>x.alder).reduce((x,y) => 
 // this og bind
 
 let Petter = dyr.filter(x => x.navn == "Petter")[0];
-Petter; 
+
+console.log(Petter);
+  
 
 Petter.snakk();  // Miau, Miau
 
