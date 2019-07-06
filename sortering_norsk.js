@@ -25,7 +25,7 @@ const hasFullICU = (() => {
 
  
  // Sjekk om full-icu er installert - returnerer true eller false 
- console.log(hasFullICU);
+ console.log("full-icu er installert?: "+hasFullICU);
   
 
 let folk = ["Åge","Mikkel","Kari","Jens","Øivind","Ola"];
