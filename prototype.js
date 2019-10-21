@@ -20,7 +20,7 @@ let katt = {
 
 Object.setPrototypeOf(katt, dyr);
 
-katt.snakk(); // nå er katt.sankk() en funksjon
+katt.snakk(); // nå er katt.snakk() en funksjon
 
 
 let hund = {
