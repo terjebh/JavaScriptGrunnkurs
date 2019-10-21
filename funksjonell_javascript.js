@@ -69,4 +69,22 @@ let tall = [1,2,3,4,5,6];
 console.log("Summen av "+tall+" er: ",tall.reduce((p, c) => { return p+c }, 0));
 console.log("Produktet av "+tall+" er: ",tall.reduce((p, c) => { return p*c }, 1));
 
+console.log("-------------------------------------");
+
+//8. Beregne saldo for en konto med reduce()
+console.log("8. Beregne saldo for en konto med reduce()");
+
+let konto = [
+  {"nummer":1001,"transaksjon":600},
+  {"nummer":1002,"transaksjon":300},
+  {"nummer":1002,"transaksjon":700},
+  {"nummer":1001,"transaksjon":-200},
+  {"nummer":1001,"transaksjon":-600},
+  {"nummer":1001,"transaksjon":6000}
+  ];
+  
+  let saldo = konto.filter(x => x.nummer===1001).map(x => x.transaksjon).reduce((x,y) => x+y);
+  
+  console.log("Saldo for konto 1001:",saldo);
+  
 
