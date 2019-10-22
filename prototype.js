@@ -1,4 +1,4 @@
-// Eksempler på prototype
+// Eksempler på prototype - JavaScripts implementering av / alternativ til  "arv"
 
 // Eksempel 1
 
@@ -45,19 +45,20 @@ ulv.hyl();
 
 // Eksempel 2
 
-// Funksjon med constructor
+// Funksjon med konstruktør
+let navn, alder, kjonn, egenskaper;
+
 let Menneske = function (navn, alder, kjonn, egenskaper) {
     this.navn = navn;
     this.alder = alder
-    this.kjon = kjonn;
+    this.kjonn = kjonn;
     this.egenskaper = egenskaper;
 }
 
+let petter = new Menneske('Petter Olsen', 32, 'Mann', ['sterk', 'egenrådig', 'smart']);
 
-let petter = new Menneske('Petter', 32, 'Mann', ['sterk', 'egenrådig', 'smart']);
-
-console.log(petter.navn);
-console.log(petter.egenskaper.join());
+console.log("petters navn er: ", petter.navn);
+console.log("petters egenskaper er: ",petter.egenskaper.join(', '));
 
 petter.epost = 'petter@smart.com';
 
