@@ -6,7 +6,11 @@
 
 // Eksempel 1
 // Pluss på 3 for hvert tall i arrayet
+console.log("[1, 3, 5, 4, 60, 7].map(a => a + 3).forEach(a => console.log(a))");
+
 [1, 3, 5, 4, 60, 7].map(a => a + 3).forEach(a => console.log(a));
+
+console.log("---------------------------------------");
 
 //Eksempel 2
 // endre strukturen på et array med objekter
@@ -53,11 +57,19 @@ console.log(tall2);
 console.log("----------------------------------");
 
 
+console.log("console.log(tall.map((val,index) => [val , tall2[index]]));");
+
 console.log(tall.map((val,index) => [val , tall2[index]]));
+
+console.log("console.log(tall.flatMap((val,index) => [val , tall2[index]]));");
 
 console.log(tall.flatMap((val,index) => [val , tall2[index]]));
 
+console.log("console.log(tall.flat().map((val,index) => [val , tall2.flat()[index]]));");
+
 console.log(tall.flat().map((val,index) => [val , tall2.flat()[index]]));
+
+console.log("console.log(tall.flat().flatMap((val,index) => [val , tall2.flat()[index]]));");
 
 console.log(tall.flat().flatMap((val,index) => [val , tall2.flat()[index]]));
 
