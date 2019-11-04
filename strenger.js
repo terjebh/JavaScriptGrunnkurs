@@ -1,5 +1,10 @@
 //Eksempler på strengefunksjoner
 
+// Erstatte deler av en tekst med replace()
+var gammel = "Dette er en ny tekst".replace("ny", "gammel");
+console.log(gammel);
+
+
 // Regex-erstatning med replace()
 var re = /epler/gi;
 var str = "Epler er runde og epler er saftige.";
