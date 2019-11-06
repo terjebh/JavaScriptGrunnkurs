@@ -1,15 +1,45 @@
 //Eksempler på strengefunksjoner
 
+// Konverter til store bokstaver med toUpperCase() eller små med to LowerCase() 
+const tekst1 = "Dette er en tekst som inneholder æøå";
+const storeBokstaver = tekst1.toUpperCase();
+console.log(storeBokstaver);
+
+const smaaBokstaver = storeBokstaver.toLowerCase();
+console.log(smaaBokstaver);
+
+// Finn antall tegn i en tekst med egenskapen length
+console.log("tekst1 inneholder",tekst1.length,"tegn.");
+
+// Søk i tekst med regulære uttrykk og match()
+console.log(tekst1.match(/inneholder/));
+console.log(tekst1.match(/inneholder/)[0]);
+console.log(tekst1.match(/inneholder/).index);
+ 
+// Trimme bort ekstra mellomrum i start og slutt
+const tekst2 = "     Tekst med ekstra mellomrom      ";
+console.log(tekst2);
+console.log(tekst2.trim());
+
+// Repeter en streng med repeat()
+const tekst3 = "Hei ";
+console.log(tekst3.repeat(5));
+
+
 // Erstatte deler av en tekst med replace()
-var gammel = "Dette er en ny tekst".replace("ny", "gammel");
+const gammel = "Dette er en ny tekst".replace("ny", "gammel");
 console.log(gammel);
 
 
 // Regex-erstatning med replace()
-var re = /epler/gi;
-var str = "Epler er runde og epler er saftige.";
-var nystr = str.replace(re, "appelsiner");
+let re = /epler/gi;
+let str = "Epler er runde og epler er saftige.";
+let nystr = str.replace(re, "appelsiner");
+let nystr2 = str.replace(/epler/gi, "appelsiner");
+
 console.log(nystr);
+
+console.log(nystr2);
 
 // lag lenke med link()
 let str2 = new String("Kursportal");

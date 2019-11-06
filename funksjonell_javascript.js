@@ -10,22 +10,22 @@ let dyr = [
 
 // 1. Hent deler av objektene med map() og skriv ut som et array
 console.log("1. Skrevet ut som array med funksjonen map():");
-console.log(dyr.map(x=>x.navn+" er en "+x.art));
+console.log(dyr.map(x => x.navn+" er en "+x.art));
 
 console.log("-------------------------------------");
 
 // 2. Hent deler av objektene med map() og dkriv ut med forEach
 console.log("2. Skrevet ut som tekst med forEach():");
-dyr.forEach(x=>console.log(x.navn+" er en "+x.art));
+dyr.forEach(x => console.log(x.navn+" er en "+x.art));
 
 console.log("-------------------------------------");
 
 // 3. Hent alle katter med filter() og skriv ut som array
-let katter = dyr.filter(x=>x.art=="Katt");
+let katter = dyr.filter(x => x.art=="Katt");
 
 console.log("3. Liste over dyr som er katter, filtrert ut med funksjonen filter():");
 
-katter.forEach(katt=>console.log("En katt: "+katt.navn));
+katter.forEach(katt => console.log("En katt: "+katt.navn));
 
 console.log("-------------------------------------");
 
@@ -33,7 +33,7 @@ console.log("-------------------------------------");
 
 console.log("4. Liste over katter som heter Ola, filtrert ut med funksjonen filter():");
 
-let Ola = dyr.filter(x=>x.art=="Katt" && x.navn=="Ola");
+let Ola = dyr.filter(x => x.art=="Katt" && x.navn=="Ola");
 console.log(Ola);
 
 console.log("-------------------------------------");
@@ -88,3 +88,7 @@ let konto = [
   console.log("Saldo for konto 1001:",saldo);
   
 
+
+// Finn den første transaksjonen til kontonummer 1002
+
+console.log(konto.find( a => a.nummer === 1002));

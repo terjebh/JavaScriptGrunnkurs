@@ -71,14 +71,6 @@ let ord = setning.split(" ");
 console.log("Antall ord:",ord.length);
 
 
-// Tell antall unike ord i setningen
-let unikeOrd = new Set();
-
-ord.map(x=>unikeOrd.add(x));
-
-console.log("Antall unike ord:",unikeOrd.size);
-
-
 
 
 
