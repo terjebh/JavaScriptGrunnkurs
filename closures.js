@@ -1,3 +1,15 @@
+// Eksempel 1 - en funksjon som teller
+
+let  tell = (function () {
+    let counter = 0;
+    return function () {counter += 1; return counter}
+  })();
+
+console.log(tell());
+console.log(tell());
+console.log(tell());
+
+
 
 
 // Eksempel 2
@@ -26,4 +38,4 @@ accumulator(obj2);
 accumulator(obj3);
 console.log(accumulator());
 // Output: [obj1.value, obj2.value, obj3.value]
-console.log(accumulator());
+console.log(accumulator().join(','));
