@@ -1,5 +1,37 @@
 window.onload = function() {
+        let area1 = document.getElementById('area1');
         let bakgrunn = false;
+
+        document.getElementById('knapp5')
+            .addEventListener('click', function() {
+                area1.innerHTML = '<label for="brregsok">Søk i enhetsregisteret: </label>' +
+                    '<input type="text" id="brregsok" placeholder="Søk etter navn eller orgnr">' +
+                    ' <button id="send">Søk</button>';
+                document.getElementById("send").addEventListener("click",
+                    function() {
+                        let query = "https://hotell.difi.no/api/json/brreg/enhetsregisteret?query=" + document.getElementById("brregsok").value;
+                        console.log(query);
+                        fetch(query)
+                            .then(resp => resp.json())
+                            .then(data => {
+                                let enheter = data.entries;
+
+                                return enheter.map(a => {
+
+                                    let span = document.createElement('div');
+                                    span.innerHTML = `Navn: ${a.navn}`;
+                                    document.body.appendChild(span);
+
+                                });
+
+
+                            })
+                            .catch(function() {
+                                console.error("Noe gikk galt ...")
+                            });
+                    });
+
+            });
 
         document.getElementById('background-color').addEventListener("change",
             function() {
@@ -11,7 +43,6 @@ window.onload = function() {
             .addEventListener('click', function() {
                 if (!bakgrunn) {
                     let y = confirm('Vil du ha lyseblå bakgrunn?');
-
                     if (y) {
                         document.body.style.backgroundColor = "";
                         document.body.className = "lyseBlaa";
@@ -33,7 +64,6 @@ window.onload = function() {
         let visBilde = false;
         document.getElementById('knapp3')
             .addEventListener('click', function() {
-                var area1 = document.getElementById('area1');
                 area1.innerHTML = '<img id="bilde1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBgvOmQuoS70nXrE18HJCGBV4mTnnV_E5EYu2po-NQV6qisTyQ">';
                 area1.style.background = "#000";
                 area1.style.width = "40%";
