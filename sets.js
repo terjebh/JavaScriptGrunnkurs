@@ -14,15 +14,21 @@ console.log(farger);
 
 // bla gjennom set
 for (let farge of farger) {
-    console.log("Farge:",farge);
+    console.log("Farge:", farge);
 }
 
 // konverter set til Array med spread (...)
 let fargeArr = [...farger];
 
 // skriv ut arrayet
-console.log("Farger som array:",fargeArr);
+console.log("Farger som array:", fargeArr);
 
 // skriv ut med join
-console.log("Farger som array skrevet ut med join:",fargeArr.join(' - '));
+console.log("Farger som array skrevet ut med join:", fargeArr.join(' - '));
 
+// Tell antall unike ord i en setning
+let unikeOrd = new Set();
+
+ord.map(x => unikeOrd.add(x));
+
+console.log("Antall unike ord:", unikeOrd.size);
