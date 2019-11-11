@@ -1,3 +1,5 @@
+
+
 // Eksempler på higher order functions i JavaScript
 // Et array med dyr
 
