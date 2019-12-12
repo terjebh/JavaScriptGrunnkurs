@@ -1,11 +1,63 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        <%= title%>
+    </title>
     <%- include('head') %>
-  </head>
-  <body>
+</head>
+
+<body>
     <%- include('meny') %>
-    <h1><%= title %></h1>
-    </body>
+        <h1>
+            <%= title%>
+        </h1>
+
+        <table id="tabell">
+            <thead>
+                <tr>
+                    <th>Navn</th>
+                    <th>Brukernavn</th>
+                    <th>Epost</th>
+                    <th>Passord</th>
+                    <th>Dato</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <%
+            for(var i = 0; i < docs.length; i++) {
+            
+            %>
+
+                    <tr>
+                        <td>
+                            <%= docs[i].navn %>
+                        </td>
+                        <td>
+                            <%= docs[i].brukernavn %>
+                        </td>
+
+                        <td>
+                            <%= docs[i].epost %>
+                        </td>
+                        <td>
+                            <%= docs[i].passord %>
+                        </td>
+                        <td>
+                            <%= docs[i].dato %>
+                        </td>
+
+                    </tr>
+
+                    <% }  %>
+            </tbody>
+
+        </table>
+
+</body>
+
+
 </html>

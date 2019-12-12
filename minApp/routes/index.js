@@ -3,10 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.ejs', { 
-    title: 'Min App',
-    subtitle: 'Dette er en express app' 
-  });
+    res.render('index', {
+        title: 'Min App',
+        subtitle: 'min nye node og express app'
+    });
 });
 
 module.exports = router;
