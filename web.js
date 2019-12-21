@@ -1,8 +1,9 @@
 window.onload = function() {
+
         let area1 = document.getElementById('area1');
         let bakgrunn = false;
 
-        document.getElementById('knapp5')
+        document.getElementById('knapp6')
             .addEventListener('click', function() {
                 area1.innerHTML = '<label for="brregsok">Søk i enhetsregisteret: </label>' +
                     '<input type="text" id="brregsok" placeholder="Søk etter navn eller orgnr">' +
@@ -15,16 +16,11 @@ window.onload = function() {
                             .then(resp => resp.json())
                             .then(data => {
                                 let enheter = data.entries;
-
                                 return enheter.map(a => {
-
                                     let span = document.createElement('div');
                                     span.innerHTML = `Navn: ${a.navn}`;
                                     document.body.appendChild(span);
-
                                 });
-
-
                             })
                             .catch(function() {
                                 console.error("Noe gikk galt ...")
@@ -33,12 +29,15 @@ window.onload = function() {
 
             });
 
+
+            // Endre bakgrunnsfarge med fargevelger
         document.getElementById('background-color').addEventListener("change",
             function() {
                 document.body.style.backgroundColor = document.getElementById("background-color").value;
             });
 
 
+            // sett bakgrunsfargen til lyseblå
         document.getElementById('knapp')
             .addEventListener('click', function() {
                 if (!bakgrunn) {
@@ -61,6 +60,8 @@ window.onload = function() {
 
             });
 
+
+        // vis og skjul bilde fra internett
         let visBilde = false;
         document.getElementById('knapp3')
             .addEventListener('click', function() {
@@ -98,13 +99,21 @@ window.onload = function() {
 
 
 
-
+        // Lag bokser
         document.getElementById('knapp4')
             .addEventListener('click', function() {
-                lagBokser();
+                lagBokser('bokser');
             });
 
-        function lagBokser() {
+        // Lag "tegneprogram"
+        document.getElementById('knapp5')
+            .addEventListener('click', function() {
+                lagBokser('tegneprogram');
+            });
+
+
+
+        function lagBokser(bokstype) {
 
             let antall = prompt("Hvor mange bokser vil du lage?", "Antall bokser");
 
@@ -112,26 +121,62 @@ window.onload = function() {
 
                 let box = document.createElement("div");
                 box.id = "box" + i;
-                box.style.width = "40px";
-                box.style.height = "40px";
-                box.style.marginLeft = "5px";
-                box.style.marginTop = "5px";
-                box.style.padding = "10px";
+              
+                if (bokstype=='bokser') {
+                   
+                    box.style.width = "40px";
+                    box.style.height = "40px";
+                    box.style.marginLeft = "5px";
+                    box.style.marginTop = "5px";
+                    box.style.padding = "10px";
+                    box.style.border = "solid 1px silver";
+                    
+                
+                } else if (bokstype == 'tegneprogram') {
+                
+                    box.style.width = "2px";
+                    box.style.height = "2px";
+                    box.style.marginLeft = "0px";
+                    box.style.marginTop = "0px";
+                    box.style.padding = "2px";
+
+                
+                }
+                
+
                 box.style.cssFloat = "left";
-                box.style.border = "solid 1px silver";
+                
                 box.style.backgroundColor = "#efefef";
-                box.appendChild(document.createTextNode(i));
                 document.body.appendChild(box);
+    
 
-                document.getElementById("box" + i).addEventListener("dblclick",
+                if (bokstype=='tegneprogram') {
+                    document.getElementById("box" + i).addEventListener("mouseover",
                     function() {
-                        fjernBoks(i);
-                    });
+                        markerBoks(i);
+                    });    
 
-                document.getElementById("box" + i).addEventListener("click",
+                } else {
+
+                    box.appendChild(document.createTextNode(i));
+                   
+                    document.getElementById("box" + i).addEventListener("click",
                     function() {
                         markerBoks(i);
                     });
+    
+                    document.getElementById("box" + i).addEventListener("dblclick",
+                    function() {
+                        fjernBoks(i);
+                    });
+    
+    
+
+                }
+                
+
+
+
             } // end loop
         } // end lagBokser
 
