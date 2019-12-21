@@ -1,3 +1,20 @@
 .lyseBlaa {
     background-color: #577fec;
 }
+
+.rad {
+    width: 800px;
+    padding: 5px;
+    background-color: beige;
+}
+
+.feltNavn {
+    width: 60%;
+    float: left;
+    margin-right: 5px;
+}
+
+.feltOrgnr {
+    width: 30%;
+    float: left;
+}

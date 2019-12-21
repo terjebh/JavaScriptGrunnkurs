@@ -3,32 +3,6 @@ window.onload = function() {
         let area1 = document.getElementById('area1');
         let bakgrunn = false;
 
-        document.getElementById('knapp6')
-            .addEventListener('click', function() {
-                area1.innerHTML = '<label for="brregsok">Søk i enhetsregisteret: </label>' +
-                    '<input type="text" id="brregsok" placeholder="Søk etter navn eller orgnr">' +
-                    ' <button id="send">Søk</button>';
-                document.getElementById("send").addEventListener("click",
-                    function() {
-                        let query = "https://hotell.difi.no/api/json/brreg/enhetsregisteret?query=" + document.getElementById("brregsok").value;
-                        console.log(query);
-                        fetch(query)
-                            .then(resp => resp.json())
-                            .then(data => {
-                                let enheter = data.entries;
-                                return enheter.map(a => {
-                                    let span = document.createElement('div');
-                                    span.innerHTML = `Navn: ${a.navn}`;
-                                    document.body.appendChild(span);
-                                });
-                            })
-                            .catch(function() {
-                                console.error("Noe gikk galt ...")
-                            });
-                    });
-
-            });
-
 
             // Endre bakgrunnsfarge med fargevelger
         document.getElementById('background-color').addEventListener("change",
@@ -173,9 +147,6 @@ window.onload = function() {
     
 
                 }
-                
-
-
 
             } // end loop
         } // end lagBokser
@@ -190,6 +161,37 @@ window.onload = function() {
             boks.style.color = "white";
 
         }
+
+
+        // Hent navn og orgnummer på bedrifter fra enhetsregisteret
+        document.getElementById('knapp6')
+        .addEventListener('click', function() {
+            area1.innerHTML = '<label for="brregsok">Søk i enhetsregisteret: </label>' +
+                '<input type="text" id="brregsok" placeholder="Søk etter navn eller orgnr">' +
+                ' <button id="send">Søk</button>';
+            document.getElementById("send").addEventListener("click",
+                function() {
+                    let query = "https://hotell.difi.no/api/json/brreg/enhetsregisteret?query=" + document.getElementById("brregsok").value;
+                    console.log(query);
+                    fetch(query)
+                        .then(resp => resp.json())
+                        .then(data => {
+                            let enheter = data.entries;
+                            return enheter.map(a => {
+                                let rad = document.createElement('div');
+                                rad.classList.add("rad");
+                                rad.innerHTML = `<span class="feltNavn">${a.navn}</span><span class="feltOrgnr">${a.orgnr}</span>`;
+                                document.body.appendChild(rad);
+                            });
+                        })
+                        .catch(function() {
+                            console.error("Noe gikk galt ...")
+                        });
+                });
+
+        });
+
+
 
 
     } // end window.onload()
