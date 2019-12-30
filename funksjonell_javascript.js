@@ -91,6 +91,6 @@ let konto = [
   
 
 
-// Finn den første transaksjonen til kontonummer 1002
+// Finn den første transaksjonen til kontonummer 1002 med find()
 
 console.log(konto.find( a => a.nummer === 1002));
