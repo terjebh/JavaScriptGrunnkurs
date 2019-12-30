@@ -64,7 +64,7 @@ console.log(setning2);
 console.log("-------------------------------------");
 
 // 7.Beregne sum og produkt at et array med tall med reduce()
-console.log("7. Beregne sum og produkt at et array med tall med reduce():\n");
+console.log("7. Beregne sum og produkt av et array med tall med reduce():\n");
 
 let tall = [1,2,3,4,5,6];
 
