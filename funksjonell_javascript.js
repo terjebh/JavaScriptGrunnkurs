@@ -68,8 +68,8 @@ console.log("7. Beregne sum og produkt av et array med tall med reduce():\n");
 
 let tall = [1,2,3,4,5,6];
 
-console.log("Summen av "+tall+" er: ",tall.reduce((p, c) => { return p+c }, 0));
-console.log("Produktet av "+tall+" er: ",tall.reduce((p, c) => { return p*c }, 1));
+console.log("Summen av "+tall+" er: ",tall.reduce((x, y) => { return x+y }, 0));
+console.log("Produktet av "+tall+" er: ",tall.reduce((x, y) => { return x*y }, 1));
 
 console.log("-------------------------------------");
 
