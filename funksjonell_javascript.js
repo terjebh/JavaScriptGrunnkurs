@@ -1,6 +1,7 @@
+// Eksempler på higher order functions i JavaScript: 
+// map(), filter(), reduce(), forEach(), sort(), find()
 
 
-// Eksempler på higher order functions i JavaScript
 // Et array med dyr
 
 let dyr = [
@@ -91,6 +92,23 @@ let konto = [
   
 
 
-// Finn den første transaksjonen til kontonummer 1002 med find()
+// 9 Finn den første transaksjonen til kontonummer 1002 med find() og map()
 
-console.log(konto.find( a => a.nummer === 1002));
+console.log("Første transaksjon til konto 1002 var:", konto.find( a => a.nummer === 1002).transaksjon);
+
+// 10 Sorter etter størrelsen på transaksjonene
+
+console.log("Sortert etter størrelsen på transaksjonene");
+
+let kontoSortert = konto.sort((a,b) => a.transaksjon > b.transaksjon ? 1 : -1);  // merk bruk av den tredelte operatoren (ternary operator)
+
+console.log(kontoSortert);
+
+// 11 enkel sortering av tall-array
+let tall2 = [45,43,456,23,4,2];
+console.log("Usorterte tall",tall2);
+
+let tall2Sortert = tall2.sort((a,b)=> a - b); // Gir samme resultat som med tredelt operator, dvs + hvis a > b, - hvis a < b
+console.log("Sorterte tall",tall2Sortert);
+
+
