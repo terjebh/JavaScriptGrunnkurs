@@ -173,16 +173,18 @@ window.onload = function() {
                 function() {
                     let query = "https://hotell.difi.no/api/json/brreg/enhetsregisteret?query=" + document.getElementById("brregsok").value;
                     console.log(query);
+                    let radDiv = document.createElement('div');
+                    let radHTML = "";
+                    area1.appendChild(radDiv);
+                    radDiv.classList.add("rad");
                     fetch(query)
                         .then(resp => resp.json())
                         .then(data => {
                             let enheter = data.entries;
                             return enheter.map(a => {
-                                let rad = document.createElement('div');
-                                rad.classList.add("rad");
-                                rad.innerHTML = `<span class="feltNavn">${a.navn}</span><span class="feltOrgnr">${a.orgnr}</span>`;
-                                document.body.appendChild(rad);
+                               radHTML+= `<span class="feltNavn">${a.navn}</span><span class="feltOrgnr">${a.orgnr}</span>`;
                             });
+
                         })
                         .catch(function() {
                             console.error("Noe gikk galt ...")
