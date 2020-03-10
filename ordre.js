@@ -2,14 +2,14 @@ let fs = require('fs');
 
 let output = fs.readFileSync('ordre.txt','utf8')
 .trim()
-.split('\n')
+.split('\r\n')
 .map(linje => linje.split('\t'))
-.reduce((kunder,linje) => {
-    kunder[linje[0]] = kunder[linje[0]] || []
-    kunder[linje[0]].push({
-    navn: linje[1],
-    antall: linje[2],
-    pris:linje[3]
+.reduce((kunder,felt) => {
+    kunder[felt[0]] = kunder[felt[0]] || []
+    kunder[felt[0]].push({
+    navn: felt[1],
+    antall: felt[2],
+    pris:felt[3]
     })
 return kunder
 }, {});
