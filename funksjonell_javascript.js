@@ -2,7 +2,7 @@
 // map(), filter(), reduce(), forEach(), sort(), find()
 
 
-// Et array med dyr
+// Et array med dyre-objekter
 
 let dyr = [
   {navn:"Ola",art:"Katt",alder:6},
@@ -69,8 +69,8 @@ console.log("7. Beregne sum og produkt av et array med tall med reduce():\n");
 
 let tall = [1,2,3,4,5,6];
 
-console.log("Summen av "+tall+" er: ",tall.reduce((x, y) => { return x+y }, 0));
-console.log("Produktet av "+tall+" er: ",tall.reduce((x, y) => { return x*y }, 1));
+console.log("Summen av "+tall+" er: ",tall.reduce((x, y) => x+y , 0));  // Begynn med null
+console.log("Produktet av "+tall+" er: ",tall.reduce((x, y) => x*y, 1)); // Begynn med 1, for å unngå at neste tall ganges med null
 
 console.log("-------------------------------------");
 
@@ -111,4 +111,6 @@ console.log("Usorterte tall",tall2);
 let tall2Sortert = tall2.sort((a,b)=> a - b); // Gir samme resultat som med tredelt operator, dvs + hvis a > b, - hvis a < b
 console.log("Sorterte tall",tall2Sortert);
 
+// 12 Beregn og skriv ut snittalderen på dyrene i øvelse 1
+console.log("Dyrenes snittalder = ",dyr.map(a => a.alder).reduce((a,b) =>  (a+b) ) / dyr.length );
 
